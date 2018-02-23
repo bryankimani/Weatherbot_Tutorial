@@ -4,13 +4,13 @@ from __future__ import unicode_literals
 
 from rasa_core.actions.action import Action
 from rasa_core.events import SlotSet
+from apixu.client import ApixuClient
 
 class ActionWeather(Action):
 	def name(self):
 		return 'action_weather'
 		
 	def run(self, dispatcher, tracker, domain):
-		from apixu.client import ApixuClient
 		api_key = '...' #your apixu key
 		client = ApixuClient(api_key)
 		
